@@ -37,6 +37,7 @@ def get_gspread_client():
 # ---------------------------------------------------------------
 @st.cache_data
 def load_raw_data():
+    # změna kvůli resetu cache v1
     gc = get_gspread_client()
     sh = gc.open_by_key(GOOGLE_SHEET_ID)
     worksheet = sh.worksheet(SHEET_NAME_MAIN)
