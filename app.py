@@ -31,7 +31,7 @@ def get_gspread_client():
 @st.cache_data(show_spinner=False)
 def load_raw_data():
     gc = get_gspread_client()
-    sh = gc.open_by_key("1svPbIAItWRAw8XdKFhbC50Qns8CN56Wc")
+    sh = gc.open_by_key("1jeKeW4pXde8ECc8PGwrfOU2GfujNXEozlzurlThxvpU")
     ws = sh.worksheet(SHEET_NAME_MAIN)
     rows = ws.get_all_values()
     return rows
