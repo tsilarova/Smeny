@@ -16,7 +16,7 @@ st.title("📅 Směny — Hlavní stránka")
 # ---------------------------------------------------------------
 # KONSTANTY
 # ---------------------------------------------------------------
-GOOGLE_SHEET_ID = ""1UqO-pRLLOKrfJZ3wzvOxdVbmSRLnyItCzdZ8rjd4C0A""
+GOOGLE_SHEET_ID = "1UqO-pRLLOKrfJZ3wzvOxdVbmSRLnyItCzdZ8rjd4C0A"
 SHEET_NAME_MAIN = "Data 2026"
 
 SCOPES = [
