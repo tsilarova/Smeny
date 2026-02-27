@@ -1,0 +1,10 @@
+[server]
+enableXsrfProtection = true
+
+[auth]
+enabled = true
+email = [
+    "tsilarova@gmail.com",
+    "prachariva@gmail.com",
+    "letimbrnosmeny@gmail.com"
+]
