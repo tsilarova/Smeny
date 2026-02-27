@@ -37,7 +37,7 @@ def get_gspread_client():
 # ---------------------------------------------------------------
 @st.cache_data
 def load_raw_data():
-    # změna kvůli resetu cache v1
+    # změna kvůli resetu cache v2
     gc = get_gspread_client()
     sh = gc.open_by_key(GOOGLE_SHEET_ID)
     worksheet = sh.worksheet(SHEET_NAME_MAIN)
@@ -61,11 +61,7 @@ def load_data_for_date(selected_date):
 selected_date = st.date_input("Vyber datum směny")
 
 # ---------------------------------------------------------------
-# ZOBRAZENÍ DAT
+# ZOBRAZENÍ DAT (bez try/except, aby se ukázala skutečná chyba)
 # ---------------------------------------------------------------
-try:
-    df = load_data_for_date(selected_date)
-    st.dataframe(df, use_container_width=True)
-
-except Exception as e:
-    st.error(f"Nastala chyba při načítání dat: {e}")
+df = load_data_for_date(selected_date)
+st.dataframe(df, use_container_width=True)
