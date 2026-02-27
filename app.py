@@ -37,7 +37,7 @@ def get_gspread_client():
 # ---------------------------------------------------------------
 @st.cache_data
 def load_raw_data():
-    # změna kvůli resetu cache v2
+    # force cache reset v4
     gc = get_gspread_client()
     sh = gc.open_by_key(GOOGLE_SHEET_ID)
     worksheet = sh.worksheet(SHEET_NAME_MAIN)
@@ -61,7 +61,8 @@ def load_data_for_date(selected_date):
 selected_date = st.date_input("Vyber datum směny")
 
 # ---------------------------------------------------------------
-# ZOBRAZENÍ DAT (bez try/except, aby se ukázala skutečná chyba)
+# ZOBRAZENÍ DAT
 # ---------------------------------------------------------------
 df = load_data_for_date(selected_date)
 st.dataframe(df, use_container_width=True)
+
